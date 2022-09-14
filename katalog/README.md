@@ -2,9 +2,11 @@
 https://pbp-tugas-2-app.herokuapp.com/katalog/
 
 ### Buatlah bagan yang berisi *request client* ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara `urls.py`, `views.py`, `models.py`, dan berkas `html`;
+https://github.com/Trunsta/Tugas-2/blob/main/Bagan_MVT.png?raw=true
 
 ### Jelaskan kenapa menggunakan *virtual environment*? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan *virtual environment*?
-Virtual environment berguna untuk mengisolasi package serta dependencies dari aplikasi sehingga tidak bertabrakan dengan versi lain yang ada pada komputer.
+Virtual environment berguna untuk mengisolasi package serta dependencies dari aplikasi sehingga tidak bertabrakan dengan versi lain yang ada pada komputer, hal ini dilakukan dengan cara membuat satu virtual environment yang terisolasi.
+Kita tetap bisa membuat aplikasi Django tanpa virtual environment, namun lebih baik menggunakan virtual environment karena hal tersebut merupakan _best practice_ saat  membuat sebuah aplikasi.
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 1. Pertama kita import *models* ke dalam file `views.py`. Kita akan menggunakan class pada `models` untuk mengambil data dari *database*. Kemudian kita membuat fungsi pada `views.py` yang bernama `show katalog` dengan parameter `request` yang me-return `render(request, "katalog.html", context)`. Kemudian kita akan memanggil fungsi *query* ke *database* dan menyimpan *query* tersebut pada sebuah variabel. Pada bagian return terdapat `context` sebagai parameter ketiga, hal ini bertujuan agar data pada variabel `context` di-*render* oleh Django dan dikembalikan pada sebuah HTML.
