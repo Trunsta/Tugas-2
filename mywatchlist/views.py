@@ -7,8 +7,16 @@ from django.core import serializers
 
 def show_mywatchlist(request):
     data_watchlist = WatchListAttribute.objects.all()
+    watchlist_len = len(data_watchlist)
+    watched_len = len(WatchListAttribute.objects.filter(watched = "Yes"))
+    watched = False
+
+    if (watched_len >= watchlist_len/2):
+        watched = True
+
     context = {
-        'data_watchlist' : data_watchlist
+        'data_watchlist' : data_watchlist,
+        'watched' : watched
     }
     return render(request, "mywatchlist.html", context)
 

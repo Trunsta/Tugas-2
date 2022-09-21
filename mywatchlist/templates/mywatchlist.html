@@ -1,7 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<table>
+  <h1>Tugas 3 PBP</h1>
+
+  <h3>Nama:</h3>
+  <p>Nikolas Reva Bellie</p>
+
+  <h3>NPM:</h3>
+  <p>2106750212</p>
+
+  {% if watched %}
+    <h3>Selamat, kamu sudah banyak menonton!</h3>
+
+  {% else %}
+    <h3>Wah, kamu masih sedikit menonton!</h3>
+
+  {% endif %}
+
+  <table>
     <tr>
     <th>Watched</th>
     <th>Title</th>
@@ -9,15 +25,16 @@
     <th>Release date</th>
     <th>Review</th>
     </tr>
+    
     {% for data in data_watchlist %}
-    <tr>
-      <th>{{data.watched}}</th>
-      <th>{{data.title}}</th>
-      <th>{{data.rating}}</th>
-      <th>{{data.release_date}}</th>
-      <th>{{data.review}}</th>
-    </tr>
+      <tr>
+        <th>{{data.watched}}</th>
+        <th>{{data.title}}</th>
+        <th>{{data.rating}}</th>
+        <th>{{data.release_date}}</th>
+        <th>{{data.review}}</th>
+      </tr>
     {% endfor %}
-</table>
+  </table>
 
 {% endblock content %}
