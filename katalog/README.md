@@ -8,10 +8,6 @@ https://github.com/Trunsta/Tugas-2/blob/main/Bagan_MVT.png?raw=true
 Virtual environment berguna untuk mengisolasi package serta dependencies dari aplikasi sehingga tidak bertabrakan dengan versi lain yang ada pada komputer, hal ini dilakukan dengan cara membuat satu virtual environment yang terisolasi.
 Kita tetap bisa membuat aplikasi Django tanpa virtual environment, namun lebih baik menggunakan virtual environment karena hal tersebut merupakan _best practice_ saat  membuat sebuah aplikasi.
 
-<<<<<<< HEAD
-## Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
-1. Membuat fungsi pada `views.py` yang bernama `show katalog` dengan parameter `request` yang me-*return* `render(request, "katalog.html")` 
-=======
 ### Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
 1. Pertama kita import *models* ke dalam file `views.py`. Kita akan menggunakan class pada `models` untuk mengambil data dari *database*. Kemudian kita membuat fungsi pada `views.py` yang bernama `show katalog` dengan parameter `request` yang me-return `render(request, "katalog.html", context)`. Kemudian kita akan memanggil fungsi *query* ke *database* dan menyimpan *query* tersebut pada sebuah variabel. Pada bagian return terdapat `context` sebagai parameter ketiga, hal ini bertujuan agar data pada variabel `context` di-*render* oleh Django dan dikembalikan pada sebuah HTML.
 ```
@@ -67,4 +63,3 @@ Untuk menampilkan items pada tabel, kita harus melakukan iterasi pada `katalog_i
 {% endfor %}
 ```
 4. Buatlah sebuah app baru di website Heroku, lalu bukalah repositori GitHub dan pergi ke `Settings -> Secrets -> Actions -> New repository secret`. Lalu isi field `Name` dengan `HEROKU_APP_NAME` dan field `Secret` dengan nama app yang sudah dibuat `pbp-tugas-2-app`. Buatlah secret baru satu lagi yang bernama `HEROKU_API_KEY` dan memiliki value API key akun Heroku yang dapat dilihat di `Account settings` pada profile Heroku.
->>>>>>> a801a83e1aed69d159ef7ea7c0938a7488712a1d
