@@ -7,4 +7,4 @@ https://pbp-tugas-2-app.herokuapp.com/katalog/
 Virtual environment berguna untuk mengisolasi package serta dependencies dari aplikasi sehingga tidak bertabrakan dengan versi lain yang ada pada komputer.
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
-1. Membuat fungsi pada `views.py` yang bernama `show katalog` dengan parameter `request` yang me-*return* `render(request, "katalog.html")`
+1. Membuat fungsi pada `views.py` yang bernama `show katalog` dengan parameter `request` yang me-*return* `render(request, "katalog.html")` 

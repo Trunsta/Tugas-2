@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 1,
+        "fields": {
+            "watched": "Yes",
+            "title": "Hereditary",
+            "rating": 7.3,
+            "release_date": "27-06-2018",
+            "review": "Serem"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 2,
+        "fields": {
+            "watched": "Yes",
+            "title": "Midsommar",
+            "rating": 7.1,
+            "release_date": "07-09-2019",
+            "review": "Creepy"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 3,
+        "fields": {
+            "watched": "Yes",
+            "title": "The Sandman",
+            "rating": 7.8,
+            "release_date": "05-08-2022",
+            "review": "Gud series"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 4,
+        "fields": {
+            "watched": "Yes",
+            "title": "John Wick: Chapter 3 - Parabellum",
+            "rating": 7.4,
+            "release_date": "17-05-2019",
+            "review": "Jon Wik"
+        }
+    },   
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 5,
+        "fields": {
+            "watched": "Yes",
+            "title": "Money Heist",
+            "rating": 8.2,
+            "release_date": "02-05-2017",
+            "review": "Rampok geming"
+        }
+    },   
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 6,
+        "fields": {
+            "watched": "No",
+            "title": "Cyberpunk: Edgerunners",
+            "rating": 8.7,
+            "release_date": "13-09-2022",
+            "review": "Anim Netplix"
+        }
+    },   
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 7,
+        "fields": {
+            "watched": "No",
+            "title": "The Witcher",
+            "rating": 8.2,
+            "release_date": "20-12-2019",
+            "review": "Watching rn"
+        }
+    }, 
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 8,
+        "fields": {
+            "watched": "Yes",
+            "title": "Violet Evergarden",
+            "rating": 8.7,
+            "release_date": "11-01-2018",
+            "review": "Makes me cri"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 9,
+        "fields": {
+            "watched": "No",
+            "title": "Ozark",
+            "rating": 8.5,
+            "release_date": "21-07-2017",
+            "review": "Cartel"
+        }
+    },  
+    {
+        "model": "mywatchlist.watchlistattribute",
+        "pk": 10,
+        "fields": {
+            "watched": "Yes",
+            "title": "Parasite",
+            "rating": 8.5,
+            "release_date": "21-06-2019",
+            "review": "Gud korean movie"
+        }
+    }
+]
