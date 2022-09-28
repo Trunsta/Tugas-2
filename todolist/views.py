@@ -1,12 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from todolist.models import Task
-from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from todolist.forms import TaskForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -30,6 +30,21 @@ def create_task(request):
         return redirect('todolist:show_todolist')
     context = {}
     return render(request, 'create_task.html', context)
+
+@login_required(login_url='/todolist/login/')
+def change_status(request, pk):
+    if(Task.objects.get(pk = pk).is_finished == True and Task.objects.get(pk=pk).user == request.user):
+        Task.objects.filter(pk = pk).update(is_finished = False)
+    else:
+        if(Task.objects.get(pk = pk).user == request.user):
+            Task.objects.filter(pk = pk).update(is_finished = True)
+    return redirect('todolist:show_todolist')
+
+@login_required(login_url='/todolist/login/')
+def delete_task(request, pk):
+    if(Task.objects.get(pk = pk).user == request.user):
+        Task.objects.filter(pk = pk).delete()
+    return redirect('todolist:show_todolist')
 
 def register(request):
     form = UserCreationForm()
@@ -59,4 +74,6 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('todolist:login')
+    response = HttpResponseRedirect(reverse('todolist:login'))
+    response.delete_cookie('last_login')
+    return response
