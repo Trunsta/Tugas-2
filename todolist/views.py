@@ -21,9 +21,9 @@ def show_todolist(request):
 
 @login_required(login_url='/todolist/login/')
 def create_task(request):
-    if(request.method == "POST"):
+    if request.method == "POST":
         form = TaskForm(request.POST)
-        if(form.is_valid):
+        if form.is_valid():
             form.instance.user = request.user
             form.save()
            
