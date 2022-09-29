@@ -5,9 +5,9 @@ https://pbp-tugas-2-app.herokuapp.com/todolist/register/<br>
 https://pbp-tugas-2-app.herokuapp.com/todolist/create-task/<br>
 https://pbp-tugas-2-app.herokuapp.com/todolist/logout/<br>
 
-Username    Password
-user1       passpbp1
-user2       passpbp2
+Username    Password<br>
+user1       passpbp1<br>
+user2       passpbp2<br>
 
 ### **Apa kegunaan `{% csrf_token %}` pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen `<form>`?**
 CSRF token berguna untuk menangkal CSRF attack, yang merupakan sebuah bentuk serangan pada sebuah website. CSRF token adalah sebuah token dengan nilai unik random yang di-*generate* pada setiap session user. Token ini akan disisipkan pada parameter yang *hidden* pada form HTML, yang kemudian akan dikirimkan ke browser client. Jika tidak ada CSRF token di form kita maka tentu website kita menjadi tidak aman karena menjadi sangat rentan terhadap serangan CSRF.
@@ -28,3 +28,6 @@ User akan mengisi form dan ketika di-submit, maka website akan me-request POST d
 - Tambah path di `urls.py` yang sesuai untuk setiap fungsi di `views.py`.
 - Add, commit, dan push ke GitHub. Otomatis akan men-deploy ke Heroku.
 - Buat test user dan data yang diperlukan.
+
+### Collaborated with: Alvaro Austin
+### https://github.com/Emilicos/Tugas2_PBP/
