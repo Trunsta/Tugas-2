@@ -5,43 +5,41 @@
 {% endblock meta %}
 
 {% block content %}
-  <h1>To-Do List</h1>
+<div class="container-fluid">
+  <h1 style="text-align: center;">To-Do List</h1>
 
-  <h3>Nama:</h3>
+  <h4>Nama:</h4>
   <p>{{nama}}</p>
 
-  <h3>NPM:</h3>
+  <h4>NPM:</h4>
   <p>{{npm}}</p>
 
-  <table>
-    <tr>
-    <th>User</th>
-    <th>Date</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Status</th>
-    <th>Change status</th>
-    <th>Delete</th>
-    </tr>
-    
     {% for task in data %}
-      <tr>
-        <th>{{task.user}}</th>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
+    <div class="card mb-3" style="width: 30%; margin:auto">
+      <div class="card-body">
+        <h3>{{task.title}}</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{task.user}}</li>
+          <li class="list-group-item">{{task.date}}</li>
+          <li class="list-group-item mb-2">{{task.description}}</li>
+        </ul>
         {% if task.is_finished %}
-            <th>Selesai</th>
+            <p style="color: green;">Selesai</p>
         {% else %}
-            <th>Belum Selesai</th>
+            <p style="color: red;">Belum Selesai</p>
         {% endif %}
-        <th><button><a href="{% url 'todolist:change_status' task.id %}">Change status</a></button> </th>
-        <th><button><a href="{% url 'todolist:delete_task' task.id%}">Delete</a></button> </th>
-      </tr>
+        <div style="text-align: center;">
+          <button><a href="{% url 'todolist:change_status' task.id %}">Change status</a></button> 
+          <button><a href="{% url 'todolist:delete_task' task.id%}">Delete</a></button> 
+        </div>
+      </div>
+    </div>
+      
     {% endfor %}
-  </table>
 
-<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<div class="mb-4" style="text-align: center;">
+  <button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+</div>
 
 {% endblock content %}
