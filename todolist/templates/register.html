@@ -7,14 +7,16 @@
 {% block content %}  
 
      <div class = "container-fluid">
-        <h1 class="pt-2 mb-2" style="text-align: center;">Formulir Registrasi</h1>  
+        <h1 class="display-6 pt-2 mb-4" style="text-align: center;">Registrasi</h1>  
 
-            <form method="POST" style="align-self: center;">  
+            <form method="POST">  
                 {% csrf_token %}  
-                <table>  
+                <table style="margin: auto;">  
                     {{ form.as_table }}  
                 </table>  
-                <div><button class="btn btn-primary" type="submit"> Daftar </button></div>
+                <div class = "pt-3" style="text-align: center;">
+                    <button class="btn btn-primary" type="submit"> Daftar </button>
+                </div>
             </form>
 
         {% if messages %}  
