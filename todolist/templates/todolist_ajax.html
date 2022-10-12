@@ -89,13 +89,13 @@
                     <form id = "new-task" method="POST" action="/todolist/add/">
                         {% csrf_token %}
                         <div class="form-floating mb-3" style="width: 50%; margin: auto;">
-                            <input type="text" class="form-control" id="input_title" placeholder="Title" name="title">
+                            <input type="text" class="form-control" id="input_title" placeholder="Title" name="title" required>
                             <label for="input_title">Title</label>
                         </div>
 
                         <div class="form-floating mb-3" style="width: 50%; margin: auto;">
                             <input type="text" class="form-control" id="input_desc" placeholder="Description"
-                                name="description">
+                                name="description" required>
                             <label for="input_desc">Description</label>
                         </div>
                         <div style="text-align: center;">

@@ -94,7 +94,7 @@ def show_todolist_ajax(request):
     }
     return render(request, "todolist_ajax.html", context)
 
-@csrf_exempt
+@login_required(login_url='/todolist/login/')
 def create_task_ajax(request):
     if request.method == "POST":
         user = request.user
