@@ -17,12 +17,12 @@
     <div id="tasks"></div>
 
     <script>
-        function show(){
+        function show() {
             $.ajax({
-            url: "json/"
-        }).done(data => {
-            data.forEach(task => {
-                let hasil = `<div class="card mb-3" style="width: 30%; margin:auto">
+                url: "json/"
+            }).done(data => {
+                data.forEach(task => {
+                    let hasil = `<div class="card mb-3" style="width: 30%; margin:auto">
       <div class="card-body">
         <h3>${task.fields.title}</h3>
         <ul class="list-group list-group-flush">
@@ -31,43 +31,43 @@
           <li class="list-group-item mb-2">${task.fields.description}</li>
         </ul>`
 
-                if (task.fields.is_finished) {
-                    hasil += `<p style="color: green;">Selesai</p>`
-                } else {
-                    hasil += `<p style="color: red;">Belum Selesai</p>`
-                }
+                    if (task.fields.is_finished) {
+                        hasil += `<p style="color: green;">Selesai</p>`
+                    } else {
+                        hasil += `<p style="color: red;">Belum Selesai</p>`
+                    }
 
-                hasil += `<div style="text-align: center;">
+                    hasil += `<div style="text-align: center;">
           <button><a href="change-status/${task.pk}">Change status</a></button> 
           <button><a href="delete-task/${task.pk}">Delete</a></button> 
         </div>
       </div>
     </div>`
-                $('#tasks').append(hasil)
+                    $('#tasks').append(hasil)
+                })
             })
-        })
         }
 
-        $(document).ready(function(){
-      show()
-    })
+        $(document).ready(function () {
+            show()
+        })
     </script>
 
     <script>
-        $(document).ready(function(){
-            $("#new-task").submit(function(e){
-            e.preventDefault()
-            var form = $(this)
-            $.ajax({
-            type: "POST",
-            url: "add/",
-            data: form.serialize(),
-            success: function(data){
-                $('#tasks').html("")
-                show()
-            }
-        });
-        })
+        $(document).ready(function () {
+            $("#new-task").submit(function (e) {
+                e.preventDefault()
+                var form = $(this)
+                $.ajax({
+                    type: "POST",
+                    url: "add/",
+                    data: form.serialize(),
+                    success: function (data) {
+                        $('#tasks').html("")
+                        show()
+                    }
+                });
+            })
         })
     </script>
 
@@ -86,10 +86,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id = "new-task" method="POST" action="/todolist/add/">
+                    <form id="new-task" method="POST" action="/todolist/add/">
                         {% csrf_token %}
                         <div class="form-floating mb-3" style="width: 50%; margin: auto;">
-                            <input type="text" class="form-control" id="input_title" placeholder="Title" name="title" required>
+                            <input type="text" class="form-control" id="input_title" placeholder="Title" name="title"
+                                required>
                             <label for="input_title">Title</label>
                         </div>
 
@@ -99,7 +100,8 @@
                             <label for="input_desc">Description</label>
                         </div>
                         <div style="text-align: center;">
-                            <button class="btn login_btn bg-primary text-white" type="submit" value="Submit"> Submit </button>
+                            <button class="btn login_btn bg-primary text-white" type="submit" value="Submit"> Submit
+                            </button>
                         </div>
                     </form>
                 </div>
